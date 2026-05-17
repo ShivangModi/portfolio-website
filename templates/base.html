@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ profile.name }}</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 transition duration-300 dark:bg-gray-900 dark:text-white">
+    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- <h1 class="text-2xl font-bold">
+                    {{ profile.name }}
+                </h1> -->
+
+                <!-- DESKTOP MENU -->
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#about"
+                        class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">About</a>
+                    <a href="#skills"
+                        class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Skills</a>
+                    <a href="#experience"
+                        class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Experience</a>
+                    <a href="#projects"
+                        class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Projects</a>
+                    <a href="#education"
+                        class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Education</a>
+                    <a href="#contact"
+                        class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Contact</a>
+
+                    <button onclick="toggleDarkMode()"
+                        class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition flex items-center justify-center">
+                        <i id="theme-icon" data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+                </div>
+
+                <!-- MOBILE BUTTON -->
+                <button id="menu-btn" class="md:hidden">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+            <!-- MOBILE MENU -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 flex flex-col gap-4">
+                <a href="#about"
+                    class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">About</a>
+                <a href="#skills"
+                    class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Skills</a>
+                <a href="#experience"
+                    class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Experience</a>
+                <a href="#projects"
+                    class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Projects</a>
+                <a href="#education"
+                    class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Education</a>
+                <a href="#contact"
+                    class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Contact</a>
+
+                <button onclick="toggleDarkMode()"
+                    class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition w-fit">
+                    <i id="mobile-theme-icon" data-lucide="moon" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 py-10">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="bg-white dark:bg-gray-800 mt-8 border-t border-gray-200 dark:border-gray-700">
+        <div class="max-w-6xl mx-auto px-6 py-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="text-gray-600 dark:text-gray-400 text-sm">
+                    © <span id="year"></span>
+                    {{ profile.name }}
+                </div>
+
+                <div class="flex items-center gap-5 text-xl">
+                    <a href="{{ profile.github }}" target="_blank"
+                        class="hover:text-blue-600 transition hover:scale-110">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="{{ profile.linkedin }}" target="_blank"
+                        class="hover:text-blue-600 transition hover:scale-110">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+
+                    <a href="mailto:{{ profile.email }}" class="hover:text-blue-600 transition hover:scale-110">
+                        <i data-lucide="mail"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        lucide.createIcons();
+
+        if (
+            localStorage.getItem("theme") === "dark"
+        ) {
+            document.documentElement.classList.add("dark");
+        }
+
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle("dark");
+
+            const themeIcon = document.getElementById("theme-icon");
+            const mobileThemeIcon = document.getElementById("mobile-theme-icon");
+
+            if (
+                document.documentElement.classList.contains("dark")
+            ) {
+                localStorage.setItem("theme", "dark");
+                themeIcon.setAttribute("data-lucide", "sun");
+
+                if (mobileThemeIcon) {
+                    mobileThemeIcon.setAttribute("data-lucide", "sun");
+                }
+            } else {
+                localStorage.setItem("theme", "light");
+                themeIcon.setAttribute("data-lucide", "moon");
+
+                if (mobileThemeIcon) {
+                    mobileThemeIcon.setAttribute("data-lucide", "moon");
+                }
+            }
+
+            lucide.createIcons();
+        }
+
+        history.scrollRestoration = "manual";
+
+        window.onload = () => {
+            const themeIcon = document.getElementById("theme-icon");
+            const mobileThemeIcon = document.getElementById("mobile-theme-icon");
+
+            if (
+                document.documentElement.classList.contains("dark")
+            ) {
+                themeIcon.setAttribute("data-lucide", "sun");
+
+                if (mobileThemeIcon) {
+                    mobileThemeIcon.setAttribute("data-lucide", "sun");
+                }
+            }
+
+            lucide.createIcons();
+        };
+
+        window.addEventListener("load", () => {
+            if (window.location.hash) {
+                history.replaceState(null, null, window.location.pathname);
+            }
+
+            window.scrollTo({top: 0, left: 0, behavior: "instant"});
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+
+</html>

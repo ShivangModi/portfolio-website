@@ -1,0 +1,30 @@
+- company: Pathway Infotech
+  role: Development Engineer — Duck Creek Developer
+  duration: Feb 2025 - Present
+  location: Rajasthan, India
+
+  responsibilities:
+    - Developing insurance policy components using Duck Creek Technologies
+    - Resolving maintenance and configuration tickets
+    - Built internal automation tools for XPath identification and field mapping
+
+- company: ABB
+  role: Research Intern
+  duration: Aug 2023 - Jul 2024
+  location: Bangalore, Karnataka
+
+  responsibilities:
+    - Built continuous retraining ML pipelines
+    - Developed modular fault prediction systems
+    - Integrated MLOps using ZenML and Streamlit
+    - Implemented conformal prediction for uncertainty quantification
+
+- company: BISAG-N
+  role: Machine Learning Intern
+  duration: Dec 2021 - Apr 2022
+  location: Gandhinagar, Gujarat
+
+  responsibilities:
+    - Developed stock prediction dashboard using Dash
+    - Built Linear Regression and LSTM forecasting models
+    - Applied preprocessing and time-series optimization techniques

@@ -1,0 +1,24 @@
+- university: Amrita Vishwa Vidyapeetham University
+
+  degree: Master of Technology in Artificial Intelligence
+
+  duration: Sep 2022 - Jul 2024
+
+  cgpa: "7.59/10"
+
+  details:
+    - Focused on Predictive Maintenance and Industrial AI
+    - Thesis on digital twin-based predictive maintenance
+    - Worked on uncertainty-aware ML systems
+
+- university: Dharmsinh Desai University
+
+  degree: Bachelor of Technology in Computer Engineering
+
+  duration: Jul 2018 - May 2022
+
+  cgpa: "7.57/10"
+
+  details:
+    - First Class with Distinction
+    - Studied Data Structures, DBMS, Operating Systems, AI

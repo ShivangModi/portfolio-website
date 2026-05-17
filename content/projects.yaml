@@ -1,0 +1,47 @@
+- title: UQ4Pro
+  description: |
+    Industrial AI demonstration platform for uncertainty quantification
+    and fault prediction in process industries.
+
+  # github: https://github.com/YOUR_USERNAME/uq4pro
+
+  technologies:
+    - Python
+    - ZenML
+    - Streamlit
+    - Machine Learning
+
+- title: Neural Style Transfer
+  description: |
+    Computer vision application that combines content and artistic
+    style images to generate stylized outputs.
+  
+  # github: https://github.com/YOUR_USERNAME/neural-style-transfer
+
+  technologies:
+    - Python
+    - TensorFlow
+    - Deep Learning
+
+- title: Maze Solver Algorithms
+  description: |
+    Implemented DFS, BFS, A*, Dijkstra, and stochastic algorithms
+    for efficient maze solving.
+  
+  # github: https://github.com/YOUR_USERNAME/maze-solver
+
+  technologies:
+    - Python
+    - Algorithms
+    - AI Search
+
+- title: N-Puzzle Solver
+  description: |
+    Intelligent puzzle solver using A* algorithm for minimum-step optimization.
+  
+  # github: https://github.com/YOUR_USERNAME/maze-solver
+
+  technologies:
+    - Python
+    - A*
+    - Search Algorithms

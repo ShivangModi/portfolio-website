@@ -1,0 +1,34 @@
+languages:
+  - Python
+  - C++
+  - Java
+
+frameworks:
+  - Flask
+  - Django
+  - Streamlit
+  - Dash
+  - TensorFlow
+  - Scikit-learn
+
+mlops:
+  - ZenML
+  - CI/CD
+  - Model Retraining
+  - Conformal Prediction
+
+databases:
+  - MySQL
+
+tools:
+  - Git
+  - Pandas
+  - NumPy
+  - Matplotlib
+
+concepts:
+  - Machine Learning
+  - Deep Learning
+  - Predictive Maintenance
+  - Time Series Forecasting
+  - Data Structures & Algorithms
