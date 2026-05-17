@@ -8,7 +8,6 @@ idna==3.15
 itsdangerous==2.2.0
 Jinja2==3.1.6
 MarkupSafe==3.0.3
-packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1777103621/work
 python-dotenv==1.2.2
 PyYAML==6.0.3
 setuptools==82.0.1
