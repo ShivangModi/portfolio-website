@@ -6,6 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{{ profile.name }}</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <!-- SEO -->
+
+    <meta name="description"
+        content="Shivang Modi - AI Engineer and Software Engineer Portfolio built using Flask, Python, and Tailwind CSS.">
+
+    <meta name="keywords"
+        content="AI Engineer, Software Engineer, Python Developer, Flask Developer, Machine Learning, Portfolio">
+
+    <meta name="author" content="Shivang Modi">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Shivang Modi Portfolio">
+
+    <meta property="og:description" content="AI Engineer and Software Engineer Portfolio">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:image" content="{{ url_for('static', filename='images/profile.jpeg', _external=True) }}">
+
+    <meta property="og:url" content="https://YOUR_RENDER_URL.onrender.com">
+
+    <!-- Twitter -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Shivang Modi Portfolio">
+
+    <meta name="twitter:description" content="AI Engineer and Software Engineer Portfolio">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -197,7 +228,7 @@
                 history.replaceState(null, null, window.location.pathname);
             }
 
-            window.scrollTo({top: 0, left: 0, behavior: "instant"});
+            window.scrollTo({ top: 0, left: 0, behavior: "instant" });
         });
 
         document.getElementById("year").textContent = new Date().getFullYear();
