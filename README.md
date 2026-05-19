@@ -9,7 +9,7 @@ Modern AI Engineer & Software Engineer portfolio built using Flask, Python, Tail
 URL:
 
 ```text
-[https://your-vercel-url.vercel.app](https://shivang-modi-portfolio.vercel.app/)
+https://shivang-modi-portfolio.vercel.app/
 ```
 
 ---
