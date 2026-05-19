@@ -9,27 +9,28 @@ Modern AI Engineer & Software Engineer portfolio built using Flask, Python, Tail
 URL:
 
 ```text
-https://shivang-portfolio.onrender.com
+[https://your-vercel-url.vercel.app](https://shivang-modi-portfolio.vercel.app/)
 ```
 
 ---
 
 # Features
 
-- Modern responsive UI
-- Dark mode support
-- Mobile-friendly navigation
-- Resume download
-- Skills section
-- Experience timeline
-- Projects showcase
-- Education section
-- Contact section
-- SEO optimized
-- OpenGraph & Twitter metadata
-- Flask backend architecture
-- YAML-based content management
-- Production deployment using Render
+* Modern responsive UI
+* Dark mode support
+* Mobile-friendly navigation
+* Resume download
+* Skills section
+* Experience timeline
+* Projects showcase
+* Education section
+* Contact section
+* SEO optimized
+* OpenGraph & Twitter metadata
+* Flask backend architecture
+* YAML-based content management
+* Production deployment using Vercel
+* Instant loading with global CDN
 
 ---
 
@@ -37,24 +38,23 @@ https://shivang-portfolio.onrender.com
 
 ## Backend
 
-- Python
-- Flask
-- Jinja2
+* Python
+* Flask
+* Jinja2
 
 ## Frontend
 
-- HTML5
-- Tailwind CSS
-- JavaScript
-- AOS Animation Library
-- Lucide Icons
-- Font Awesome
+* HTML5
+* Tailwind CSS
+* JavaScript
+* AOS Animation Library
+* Lucide Icons
+* Font Awesome
 
 ## Deployment
 
-- Render
-- Gunicorn
-- GitHub
+* Vercel
+* GitHub
 
 ---
 
@@ -63,10 +63,12 @@ https://shivang-portfolio.onrender.com
 ```text
 portfolio-website/
 │
+├── api/
+│   └── index.py
+│
 ├── app.py
 ├── requirements.txt
-├── Procfile
-├── runtime.txt
+├── vercel.json
 ├── .gitignore
 │
 ├── content/
@@ -74,6 +76,7 @@ portfolio-website/
 │   ├── skills.yaml
 │   ├── experience.yaml
 │   └── education.yaml
+│   └── projects.yaml
 │
 ├── templates/
 │   ├── base.html
@@ -143,28 +146,59 @@ http://127.0.0.1:5000
 
 ---
 
-# Deployment
+# Vercel Deployment
 
 This project is deployed using:
 
-- GitHub
-- Render
-- Gunicorn
+* GitHub
+* Vercel
 
 ---
 
-# Deploy On Render
+# Deploy On Vercel
 
-## Build Command
+## 1. Install Vercel CLI (Optional)
 
-```text
-pip install -r requirements.txt
+```bash
+npm install -g vercel
 ```
 
-## Start Command
+---
 
-```text
-gunicorn app:app
+## 2. Login To Vercel
+
+```bash
+vercel login
+```
+
+---
+
+## 3. Deploy
+
+```bash
+vercel
+```
+
+---
+
+# vercel.json
+
+```json
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "api/index.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "api/index.py"
+        }
+    ]
+}
 ```
 
 ---
@@ -181,24 +215,24 @@ Python 3.11
 
 # SEO Features
 
-- Meta description
-- OpenGraph tags
-- Twitter card support
-- Favicon support
-- Responsive design
+* Meta description
+* OpenGraph tags
+* Twitter card support
+* Favicon support
+* Responsive design
 
 ---
 
 # Future Improvements
 
-- Blog section
-- GitHub API integration
-- Project filtering
-- Contact form backend
-- Visitor analytics
-- Custom domain
-- Docker support
-- CI/CD pipeline
+* Blog section
+* GitHub API integration
+* Project filtering
+* Contact form backend
+* Visitor analytics
+* Custom domain
+* Docker support
+* CI/CD pipeline
 
 ---
 
@@ -208,17 +242,17 @@ Python 3.11
 
 AI Engineer & Software Engineer
 
-- GitHub: https://github.com/ShivangModi
-- LinkedIn: https://linkedin.com/in/shivang-modi
+* GitHub: https://github.com/ShivangModi
+* LinkedIn: https://linkedin.com/in/shivang-modi
 
 ---
 
 # Acknowledgements
 
-- Flask
-- Tailwind CSS
-- Lucide Icons
-- Font Awesome
-- AOS Animation Library
-- Render
-
+* Flask
+* Tailwind CSS
+* Lucide Icons
+* Font Awesome
+* AOS Animation Library
+* Vercel
+* GitHub
