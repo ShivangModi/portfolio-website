@@ -9,33 +9,22 @@
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
     <!-- SEO -->
-
     <meta name="description"
         content="Shivang Modi - AI Engineer and Software Engineer Portfolio built using Flask, Python, and Tailwind CSS.">
-
     <meta name="keywords"
         content="AI Engineer, Software Engineer, Python Developer, Flask Developer, Machine Learning, Portfolio">
-
     <meta name="author" content="Shivang Modi">
 
     <!-- Open Graph -->
-
     <meta property="og:title" content="Shivang Modi Portfolio">
-
     <meta property="og:description" content="AI Engineer and Software Engineer Portfolio">
-
     <meta property="og:type" content="website">
-
     <meta property="og:image" content="{{ url_for('static', filename='images/profile.jpeg', _external=True) }}">
-
-    <meta property="og:url" content="https://YOUR_RENDER_URL.onrender.com">
+    <meta property="og:url" content="https://shivang-modi-portfolio.vercel.app">
 
     <!-- Twitter -->
-
     <meta name="twitter:card" content="summary_large_image">
-
     <meta name="twitter:title" content="Shivang Modi Portfolio">
-
     <meta name="twitter:description" content="AI Engineer and Software Engineer Portfolio">
 
     <!-- Tailwind CSS -->
@@ -89,6 +78,8 @@
                         class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Projects</a>
                     <a href="#education"
                         class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Education</a>
+                    <a href="#certificates"
+                        class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Certificates</a>
                     <a href="#contact"
                         class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Contact</a>
 
@@ -116,6 +107,8 @@
                     class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Projects</a>
                 <a href="#education"
                     class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Education</a>
+                <a href="#certificates"
+                    class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Certificates</a>
                 <a href="#contact"
                     class="px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">Contact</a>
 
@@ -207,17 +200,12 @@
         history.scrollRestoration = "manual";
 
         window.onload = () => {
-            const themeIcon = document.getElementById("theme-icon");
-            const mobileThemeIcon = document.getElementById("mobile-theme-icon");
-
             if (
-                document.documentElement.classList.contains("dark")
+                localStorage.getItem("theme") === "dark"
             ) {
-                themeIcon.setAttribute("data-lucide", "sun");
-
-                if (mobileThemeIcon) {
-                    mobileThemeIcon.setAttribute("data-lucide", "sun");
-                }
+                document.documentElement.classList.add("dark");
+                document.getElementById("theme-icon")?.setAttribute("data-lucide", "sun");
+                document.getElementById("mobile-theme-icon")?.setAttribute("data-lucide", "sun");
             }
 
             lucide.createIcons();
